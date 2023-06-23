@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/forecast/<int:row>', methods=['GET'])
 def forecast(row):
     # 데이터 로드
-    df = pd.read_csv("/Users/kimminseok/Downloads/연간_통계_자치구별-11-15.txt", header=None, sep='\s+')
+    df = pd.read_csv("/Ministry-of-Territory-Project/연간_통계_자치구별-11-15.txt", header=None, sep='\s+')
 
     if row >= df.shape[0]:
         return jsonify({'error': 'row out of range'}), 400
